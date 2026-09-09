@@ -30,16 +30,14 @@ interface ForBusinessOwnersPageProps {
   onNavigate: (page: PageId) => void;
 }
 
-// Temporary placeholder asset paths for For Business Owners page
-const BUSINESS_HERO_IMG = '/assets/business-owners-hero.jpg';
+// Prepared local hero image path
+const HERO_IMG = '/assets/heroes/business-owners-hero.png';
 const BUSINESS_PARTICIPATION_IMG = '/assets/business-participation.jpg';
 
-// Safe high-resolution online fallbacks
-const FALLBACK_HERO = 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1920&q=85';
+// Safe high-resolution online fallback for participation section
 const FALLBACK_PARTICIPATION = 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=85';
 
 export default function ForBusinessOwnersPage({ onNavigate }: ForBusinessOwnersPageProps) {
-  const [heroImgError, setHeroImgError] = useState(false);
   const [participationImgError, setParticipationImgError] = useState(false);
 
   return (
@@ -50,20 +48,11 @@ export default function ForBusinessOwnersPage({ onNavigate }: ForBusinessOwnersP
       <section className="relative w-full h-[520px] sm:h-[580px] lg:h-[620px] bg-[#050F11] overflow-hidden flex items-center">
         {/* Background Photograph Container */}
         <div className="absolute inset-0 w-full h-full bg-[#005F67]/30">
-          {!heroImgError ? (
-            <img
-              src={BUSINESS_HERO_IMG}
-              onError={() => setHeroImgError(true)}
-              alt="TellerBud For Business Owners & Mobile Money Agents"
-              className="w-full h-full object-cover object-center"
-            />
-          ) : (
-            <img
-              src={FALLBACK_HERO}
-              alt="TellerBud For Business Owners & Mobile Money Agents"
-              className="w-full h-full object-cover object-center"
-            />
-          )}
+          <img
+            src={HERO_IMG}
+            alt="TellerBud For Business Owners & Mobile Money Agents"
+            className="w-full h-full object-cover object-center"
+          />
           {/* Moderate dark oceanic-green overlay for text readability while keeping photograph clearly visible */}
           <div className="absolute inset-0 bg-[#050F11]/60" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050F11]/90 via-[#050F11]/75 to-[#005F67]/30" />

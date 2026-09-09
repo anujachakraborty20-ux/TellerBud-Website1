@@ -19,8 +19,7 @@ interface HowItWorksPageProps {
 }
 
 // Hero & Process Authentic Photography Assets
-const HERO_BG_IMG = '/assets/how-it-works-hero.jpg';
-const FALLBACK_HERO = 'https://images.unsplash.com/photo-1556742049-0a670f4a4591?auto=format&fit=crop&w=1920&q=80';
+const HERO_IMG = '/assets/heroes/how-it-works-hero.png';
 
 const STEP_1_IMG = 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80';
 const STEP_2_IMG = 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1200&q=80';
@@ -32,7 +31,6 @@ const STEP_6_IMG = '/assets/how-it-works-step-6.jpg';
 const FALLBACK_STEP_6 = 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80';
 
 export default function HowItWorksPage({ onGetTellerBud, onNavigate }: HowItWorksPageProps) {
-  const [heroImg, setHeroImg] = useState(HERO_BG_IMG);
   const [step1Img, setStep1Img] = useState(STEP_1_IMG);
   const [step2Img, setStep2Img] = useState(STEP_2_IMG);
   const [step3Img, setStep3Img] = useState(STEP_3_IMG);
@@ -48,8 +46,7 @@ export default function HowItWorksPage({ onGetTellerBud, onNavigate }: HowItWork
       <section className="relative w-full bg-[#090D10] text-[#FCFCFB] overflow-hidden min-h-[500px] sm:min-h-[560px] lg:min-h-[620px] flex items-center">
         {/* Hero Background Image */}
         <img
-          src={heroImg}
-          onError={() => setHeroImg(FALLBACK_HERO)}
+          src={HERO_IMG}
           alt="African mobile money interaction"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

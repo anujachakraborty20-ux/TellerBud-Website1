@@ -18,20 +18,18 @@ interface ServicesPageProps {
   onNavigate: (page: PageId) => void;
 }
 
-// Temporary placeholder asset paths for Services page
-const SERVICES_HERO_IMG = '/assets/services-hero.jpg';
+// Prepared local hero image path
+const HERO_IMG = '/assets/heroes/customer-services-hero.png';
 const SERVICES_PICKUP_IMG = '/assets/services-pickup.jpg';
 const SERVICES_DELIVERY_IMG = '/assets/services-delivery.jpg';
 const SERVICES_WALKIN_IMG = '/assets/services-walk-in.jpg';
 
-// Safe high-resolution online fallbacks
-const FALLBACK_HERO = 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1920&q=85';
+// Safe high-resolution online fallbacks for service cards
 const FALLBACK_PICKUP = 'https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=85';
 const FALLBACK_DELIVERY = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=85';
 const FALLBACK_WALKIN = 'https://images.unsplash.com/photo-1556742049-0a67e5572293?auto=format&fit=crop&w=1200&q=85';
 
 export default function ServicesPage({ onGetTellerBud, onNavigate }: ServicesPageProps) {
-  const [heroImgError, setHeroImgError] = useState(false);
   const [pickupImgError, setPickupImgError] = useState(false);
   const [deliveryImgError, setDeliveryImgError] = useState(false);
   const [walkInImgError, setWalkInImgError] = useState(false);
@@ -44,20 +42,11 @@ export default function ServicesPage({ onGetTellerBud, onNavigate }: ServicesPag
       <section className="relative w-full h-[520px] sm:h-[580px] lg:h-[620px] bg-[#050F11] overflow-hidden flex items-center">
         {/* Background Photograph Container */}
         <div className="absolute inset-0 w-full h-full bg-[#005F67]/30">
-          {!heroImgError ? (
-            <img
-              src={SERVICES_HERO_IMG}
-              onError={() => setHeroImgError(true)}
-              alt="TellerBud Services - Mobile Money Support"
-              className="w-full h-full object-cover object-center"
-            />
-          ) : (
-            <img
-              src={FALLBACK_HERO}
-              alt="TellerBud Services - Mobile Money Support"
-              className="w-full h-full object-cover object-center"
-            />
-          )}
+          <img
+            src={HERO_IMG}
+            alt="TellerBud Services - Mobile Money Support"
+            className="w-full h-full object-cover object-center"
+          />
           {/* Moderate dark oceanic-green overlay for text readability while keeping photograph clearly visible */}
           <div className="absolute inset-0 bg-[#050F11]/60" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050F11]/90 via-[#050F11]/70 to-[#005F67]/30" />

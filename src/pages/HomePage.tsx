@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   ArrowRight,
   ChevronRight,
@@ -20,13 +19,10 @@ interface HomePageProps {
   onNavigate: (page: PageId) => void;
 }
 
-// Hero local image asset path & fallback
-const HERO_BG_IMG = '/assets/home-hero.jpg';
-const FALLBACK_HERO = 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1920&q=85';
+// Local hero image asset
+const HERO_IMG = '/assets/heroes/home-hero.png';
 
 export default function HomePage({ onGetTellerBud, onNavigate }: HomePageProps) {
-  const [heroError, setHeroError] = useState(false);
-
   return (
     <div className="w-full bg-[#FCFCFB] text-[#182026]">
       
@@ -36,22 +32,12 @@ export default function HomePage({ onGetTellerBud, onNavigate }: HomePageProps) 
       <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[700px] h-auto lg:h-[700px] bg-[#050F11] overflow-hidden flex items-start">
         {/* Full-width authentic African commerce photograph background */}
         <div className="absolute inset-0 w-full h-full bg-[#005F67]/30">
-          {!heroError ? (
-            <img
-              src={HERO_BG_IMG}
-              onError={() => setHeroError(true)}
-              referrerPolicy="no-referrer"
-              alt="African mobile money and local commerce"
-              className="w-full h-full object-cover object-center"
-            />
-          ) : (
-            <img
-              src={FALLBACK_HERO}
-              referrerPolicy="no-referrer"
-              alt="African mobile money and local commerce"
-              className="w-full h-full object-cover object-center"
-            />
-          )}
+          <img
+            src={HERO_IMG}
+            referrerPolicy="no-referrer"
+            alt="African mobile money and local commerce"
+            className="w-full h-full object-cover object-center"
+          />
           {/* Moderate dark overlay (rgba(5, 15, 17, 0.55)) for text readability while keeping photograph clearly visible */}
           <div className="absolute inset-0 bg-[#050F11]/55" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050F11]/70 via-[#050F11]/55 to-transparent" />

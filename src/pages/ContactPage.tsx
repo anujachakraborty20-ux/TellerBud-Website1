@@ -8,13 +8,10 @@ interface ContactPageProps {
   onNavigate: (page: PageId) => void;
 }
 
-// Temporary placeholder asset path for Contact page hero
-const CONTACT_HERO_IMG = '/assets/contact-hero.jpg';
-const FALLBACK_HERO = 'https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=1920&q=85';
+// Prepared local hero image path
+const HERO_IMG = '/assets/heroes/contact-hero.png';
 
 export default function ContactPage({ onNavigate, onGetTellerBud }: ContactPageProps) {
-  const [heroImgError, setHeroImgError] = useState(false);
-  
   // Form State
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -38,20 +35,11 @@ export default function ContactPage({ onNavigate, onGetTellerBud }: ContactPageP
       <section className="relative w-full h-[480px] sm:h-[540px] lg:h-[580px] bg-[#050F11] overflow-hidden flex items-center">
         {/* Background Photograph Container */}
         <div className="absolute inset-0 w-full h-full bg-[#005F67]/30">
-          {!heroImgError ? (
-            <img
-              src={CONTACT_HERO_IMG}
-              onError={() => setHeroImgError(true)}
-              alt="Contact TellerBud"
-              className="w-full h-full object-cover object-center"
-            />
-          ) : (
-            <img
-              src={FALLBACK_HERO}
-              alt="Contact TellerBud"
-              className="w-full h-full object-cover object-center"
-            />
-          )}
+          <img
+            src={HERO_IMG}
+            alt="Contact TellerBud"
+            className="w-full h-full object-cover object-center"
+          />
           {/* Moderate dark oceanic-green overlay keeping photograph visible */}
           <div className="absolute inset-0 bg-[#050F11]/60" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050F11]/90 via-[#050F11]/75 to-[#005F67]/30" />
