@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   MapPin,
   ShieldCheck,
@@ -21,23 +20,15 @@ interface HowItWorksPageProps {
 // Hero & Process Authentic Photography Assets
 const HERO_IMG = '/assets/heroes/how-it-works-hero.png';
 
-const STEP_1_IMG = 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80';
-const STEP_2_IMG = 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1200&q=80';
-const STEP_3_IMG = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80';
-const STEP_4_IMG = 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80';
-const STEP_5_IMG = '/assets/how-it-works-step-5.jpg';
-const FALLBACK_STEP_5 = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80';
-const STEP_6_IMG = '/assets/how-it-works-step-6.jpg';
-const FALLBACK_STEP_6 = 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80';
+// Local Step Photography Assets (public/assets/how-it-works/steps)
+const STEP_1_IMG = '/assets/how-it-works/steps/step-1-choose-service.png';
+const STEP_2_IMG = '/assets/how-it-works/steps/step-2-request-details.png';
+const STEP_3_IMG = '/assets/how-it-works/steps/step-3-agent-acceptance.png';
+const STEP_4_IMG = '/assets/how-it-works/steps/step-4-secure-completion.png';
+const STEP_5_IMG = '/assets/how-it-works/steps/step-5-transaction-capture.png';
+const STEP_6_IMG = '/assets/how-it-works/steps/step-6-agent-liquidity.png';
 
 export default function HowItWorksPage({ onGetTellerBud, onNavigate }: HowItWorksPageProps) {
-  const [step1Img, setStep1Img] = useState(STEP_1_IMG);
-  const [step2Img, setStep2Img] = useState(STEP_2_IMG);
-  const [step3Img, setStep3Img] = useState(STEP_3_IMG);
-  const [step4Img, setStep4Img] = useState(STEP_4_IMG);
-  const [step5Img, setStep5Img] = useState(STEP_5_IMG);
-  const [step6Img, setStep6Img] = useState(STEP_6_IMG);
-
   return (
     <div className="w-full bg-[#FCFCFB] text-[#182026]">
       {/* ================================================== */}
@@ -126,8 +117,7 @@ export default function HowItWorksPage({ onGetTellerBud, onNavigate }: HowItWork
           {/* Image Left */}
           <div className="relative rounded-3xl overflow-hidden border border-[#DDE7E7] shadow-md group">
             <img
-              src={step1Img}
-              onError={() => setStep1Img(STEP_1_IMG)}
+              src={STEP_1_IMG}
               alt="Choose Pickup or Delivery"
               className="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover object-center group-hover:scale-102 transition-transform duration-500"
             />
@@ -197,8 +187,7 @@ export default function HowItWorksPage({ onGetTellerBud, onNavigate }: HowItWork
           {/* Image Right */}
           <div className="order-1 lg:order-2 relative rounded-3xl overflow-hidden border border-[#DDE7E7] shadow-md group">
             <img
-              src={step2Img}
-              onError={() => setStep2Img(STEP_2_IMG)}
+              src={STEP_2_IMG}
               alt="Provide request details on mobile phone"
               className="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover object-center group-hover:scale-102 transition-transform duration-500"
             />
@@ -214,8 +203,7 @@ export default function HowItWorksPage({ onGetTellerBud, onNavigate }: HowItWork
           {/* Image Left */}
           <div className="relative rounded-3xl overflow-hidden border border-[#DDE7E7] shadow-md group">
             <img
-              src={step3Img}
-              onError={() => setStep3Img(STEP_3_IMG)}
+              src={STEP_3_IMG}
               alt="Eligible Agent accepts request"
               className="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover object-center group-hover:scale-102 transition-transform duration-500"
             />
@@ -276,8 +264,7 @@ export default function HowItWorksPage({ onGetTellerBud, onNavigate }: HowItWork
           {/* Image Right */}
           <div className="order-1 lg:order-2 relative rounded-3xl overflow-hidden border border-[#DDE7E7] shadow-md group">
             <img
-              src={step4Img}
-              onError={() => setStep4Img(STEP_4_IMG)}
+              src={STEP_4_IMG}
               alt="Both sides confirm transaction completion"
               className="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover object-center group-hover:scale-102 transition-transform duration-500"
             />
@@ -293,8 +280,7 @@ export default function HowItWorksPage({ onGetTellerBud, onNavigate }: HowItWork
           {/* Image Left */}
           <div className="relative rounded-3xl overflow-hidden border border-[#DDE7E7] shadow-md group">
             <img
-              src={step5Img}
-              onError={() => setStep5Img(FALLBACK_STEP_5)}
+              src={STEP_5_IMG}
               alt="Transactions recorded for Business Owner visibility"
               className="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover object-center group-hover:scale-102 transition-transform duration-500"
             />
@@ -356,8 +342,7 @@ export default function HowItWorksPage({ onGetTellerBud, onNavigate }: HowItWork
           {/* Image Right */}
           <div className="order-1 lg:order-2 relative rounded-3xl overflow-hidden border border-[#DDE7E7] shadow-md group">
             <img
-              src={step6Img}
-              onError={() => setStep6Img(FALLBACK_STEP_6)}
+              src={STEP_6_IMG}
               alt="Help Agents maintain liquidity"
               className="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover object-center group-hover:scale-102 transition-transform duration-500"
             />
