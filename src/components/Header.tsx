@@ -104,7 +104,7 @@ export default function Header({ activePage, onNavigate, onGetTellerBud }: Heade
               <button
                 type="button"
                 onClick={handleLoginClick}
-                className="px-5 xl:px-6 py-2.5 bg-[#FCFCFB] hover:bg-[#DFF4F3] text-[#090D10] text-sm font-semibold rounded-full border border-[#008C95] transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#008C95] focus-visible:ring-offset-2 active:scale-[0.98] inline-flex items-center justify-center whitespace-nowrap min-h-[42px]"
+                className="px-5 xl:px-6 py-2.5 bg-[#E67E22] hover:bg-[#C96812] active:bg-[#B95C0B] text-[#FFFFFF] text-sm font-semibold rounded-full transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E67E22] focus-visible:ring-offset-2 active:scale-[0.98] inline-flex items-center justify-center whitespace-nowrap min-h-[42px]"
               >
                 Login
               </button>
@@ -123,7 +123,7 @@ export default function Header({ activePage, onNavigate, onGetTellerBud }: Heade
               <button
                 type="button"
                 onClick={handleLoginClick}
-                className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-[#090D10] bg-[#FCFCFB] hover:bg-[#DFF4F3] border border-[#008C95] rounded-full transition-colors cursor-pointer whitespace-nowrap"
+                className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-[#FFFFFF] bg-[#E67E22] hover:bg-[#C96812] active:bg-[#B95C0B] rounded-full transition-colors cursor-pointer whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E67E22]"
               >
                 Login
               </button>
@@ -179,7 +179,7 @@ export default function Header({ activePage, onNavigate, onGetTellerBud }: Heade
                 setMobileMenuOpen(false);
                 handleLoginClick();
               }}
-              className="w-full flex items-center justify-center min-h-[44px] px-5 py-3 text-base font-semibold text-[#090D10] bg-[#FCFCFB] hover:bg-[#DFF4F3] border border-[#008C95] rounded-xl transition-colors cursor-pointer"
+              className="w-full flex items-center justify-center min-h-[44px] px-5 py-3 text-base font-semibold text-[#FFFFFF] bg-[#E67E22] hover:bg-[#C96812] active:bg-[#B95C0B] rounded-xl transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E67E22]"
             >
               Login
             </button>
