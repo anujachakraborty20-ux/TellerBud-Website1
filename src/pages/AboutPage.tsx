@@ -10,6 +10,34 @@ interface AboutPageProps {
 // Prepared local hero image path
 const HERO_IMG = '/assets/heroes/about-hero.png';
 
+interface PurposePoint {
+  title: string;
+  description: string;
+}
+
+const PURPOSE_POINTS: PurposePoint[] = [
+  {
+    title: 'Customer Convenience',
+    description: 'secure Pickup and Delivery support when Customers need it.',
+  },
+  {
+    title: 'Agent Operations',
+    description: 'ability to efficiently serve Customers, manage daily transactions and maintain liquidity.',
+  },
+  {
+    title: 'Real-Time Transaction Capture',
+    description: 'record walk-in, Pickup and Delivery transactions as they happen.',
+  },
+  {
+    title: 'Business Visibility',
+    description: 'give Business Owners a clear, up-to-date view of Agent activity and transactions.',
+  },
+  {
+    title: 'Operational Control',
+    description: 'help Business Owners manage Agents, transactions, liquidity and day-to-day operations.',
+  },
+];
+
 interface TeamMember {
   name: string;
   role: string;
@@ -127,14 +155,37 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
             <h2 className="text-2xl sm:text-4xl font-semibold text-[#090D10] tracking-tight">
               Bringing essential mobile money services closer to everyday life.
             </h2>
-            <div className="space-y-4 pt-2 text-base sm:text-lg text-[#30383D] leading-relaxed font-normal">
-              <p>
-                TellerBud aims to reduce the inconvenience of finding suitable mobile money service support by coordinating Pickup and Delivery requests with eligible Agents.
-              </p>
-              <p>
-                The platform is designed around the role mobile money plays in daily routines, local commerce and community access.
-              </p>
+            <p className="text-base sm:text-lg text-[#30383D] leading-relaxed font-normal pt-1 max-w-2xl mx-auto">
+              TellerBud is designed to make everyday mobile-money services more convenient for Customers and more manageable for Agents and Business Owners.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto mt-10 sm:mt-12">
+            <p className="text-sm sm:text-base font-semibold text-[#005F67] uppercase tracking-wider mb-4 sm:mb-5 text-center sm:text-left">
+              The platform brings together:
+            </p>
+
+            <div className="space-y-3 sm:space-y-3.5 text-left">
+              {PURPOSE_POINTS.map((point, idx) => (
+                <div
+                  key={point.title}
+                  className="flex items-start gap-3.5 sm:gap-4 p-4 sm:p-5 rounded-xl bg-white border border-[#E2ECEC] hover:border-[#008C95]/40 transition-colors shadow-xs"
+                >
+                  <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-[#008C95]/10 border border-[#008C95]/20 text-[#008C95] font-bold text-xs sm:text-sm flex items-center justify-center">
+                    0{idx + 1}
+                  </span>
+                  <div className="pt-0.5 text-sm sm:text-base leading-relaxed">
+                    <span className="font-bold text-[#090D10]">{point.title}</span>
+                    <span className="text-[#008C95] mx-2 font-medium">—</span>
+                    <span className="text-[#30383D]">{point.description}</span>
+                  </div>
+                </div>
+              ))}
             </div>
+
+            <p className="text-base sm:text-lg text-[#30383D] leading-relaxed font-normal text-center mt-8 sm:mt-10 max-w-2xl mx-auto">
+              TellerBud is built around the role mobile money plays in everyday life, local commerce and community access.
+            </p>
           </div>
         </div>
       </section>

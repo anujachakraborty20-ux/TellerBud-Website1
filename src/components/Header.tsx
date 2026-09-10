@@ -53,9 +53,6 @@ export default function Header({ activePage, onNavigate, onGetTellerBud }: Heade
 
   return (
     <header className="sticky top-0 z-50 w-full max-w-none shadow-xs">
-      {/* Slim oceanic-green top accent bar */}
-      <div className="w-full h-1 bg-[#008C95]" />
-
       <div
         className={`w-full max-w-none transition-all duration-300 flex items-center ${
           isScrolled
@@ -78,7 +75,7 @@ export default function Header({ activePage, onNavigate, onGetTellerBud }: Heade
                 className="group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#008C95] rounded-2xl p-0.5 -ml-0.5 transition-all flex items-center"
                 aria-label="TellerBud Home"
               >
-                <TellerBudLogo size="md" />
+                <TellerBudLogo size="md" showTagline={true} />
               </a>
             </div>
 
