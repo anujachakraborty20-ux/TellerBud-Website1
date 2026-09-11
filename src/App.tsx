@@ -1,8 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import TrustHighlights from './components/TrustHighlights';
-import HowItWorks from './components/HowItWorks';
 import Footer from './components/Footer';
 import GetStartedModal from './components/GetStartedModal';
 import { PageId } from './types';
@@ -12,12 +9,53 @@ import HomePage from './pages/HomePage';
 import HowItWorksPage from './pages/HowItWorksPage';
 import ServicesPage from './pages/ServicesPage';
 import ForBusinessOwnersPage from './pages/ForBusinessOwnersPage';
+import PricingPage from './pages/PricingPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 
+const PAGE_PATH_MAP: Record<PageId, string> = {
+  'home': '/',
+  'how-it-works': '/how-it-works',
+  'services': '/services',
+  'for-business-owners': '/for-business-owners',
+  'pricing': '/pricing',
+  'about': '/about',
+  'contact': '/contact',
+};
+
+const PATH_PAGE_MAP: Record<string, PageId> = {
+  '/': 'home',
+  '/how-it-works': 'how-it-works',
+  '/services': 'services',
+  '/for-business-owners': 'for-business-owners',
+  '/business-owners': 'for-business-owners',
+  '/pricing': 'pricing',
+  '/about': 'about',
+  '/contact': 'contact',
+};
+
+function getPageFromUrl(): PageId {
+  if (typeof window === 'undefined') return 'home';
+  const path = window.location.pathname.replace(/\/$/, '') || '/';
+  if (PATH_PAGE_MAP[path]) return PATH_PAGE_MAP[path];
+  const hash = window.location.hash.replace(/^#\/?/, '');
+  if (hash && (hash as PageId) in PAGE_PATH_MAP) {
+    return hash as PageId;
+  }
+  return 'home';
+}
+
 export default function App() {
-  const [activePage, setActivePage] = useState<PageId>('home');
+  const [activePage, setActivePage] = useState<PageId>(getPageFromUrl);
   const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    const onPopState = () => {
+      setActivePage(getPageFromUrl());
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
 
   const handleGetTellerBud = () => {
     setModalOpen(true);
@@ -26,6 +64,12 @@ export default function App() {
   const handleNavigate = (page: PageId) => {
     setActivePage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined' && window.history.pushState) {
+      const targetPath = PAGE_PATH_MAP[page] || '/';
+      if (window.location.pathname !== targetPath) {
+        window.history.pushState({ page }, '', targetPath);
+      }
+    }
   };
 
   return (
@@ -62,6 +106,13 @@ export default function App() {
 
         {activePage === 'for-business-owners' && (
           <ForBusinessOwnersPage
+            onGetTellerBud={handleGetTellerBud}
+            onNavigate={handleNavigate}
+          />
+        )}
+
+        {activePage === 'pricing' && (
+          <PricingPage
             onGetTellerBud={handleGetTellerBud}
             onNavigate={handleNavigate}
           />

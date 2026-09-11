@@ -15,6 +15,7 @@ const NAV_ITEMS: { id: PageId; label: string }[] = [
   { id: 'how-it-works', label: 'How It Works' },
   { id: 'services', label: 'Customer Services' },
   { id: 'for-business-owners', label: 'Business Owners' },
+  { id: 'pricing', label: 'Pricing' },
   { id: 'about', label: 'About' },
   { id: 'contact', label: 'Contact' },
 ];
@@ -60,11 +61,11 @@ export default function Header({ activePage, onNavigate, onGetTellerBud }: Heade
             : 'bg-[#FCFCFB] border-b border-[#DDE7E7]/70 py-2.5 lg:py-3 min-h-[70px] sm:min-h-[80px] lg:min-h-[90px]'
         }`}
       >
-        {/* Full-width inner content container: 100% width with responsive horizontal padding */}
-        <div className="w-full max-w-none px-5 sm:px-6 md:px-8 lg:px-14 xl:px-16 2xl:px-20">
-          <div className="flex items-center justify-between gap-4 lg:gap-6 xl:gap-8 w-full">
+        {/* Full-width inner content container: left padding 32-40px on desktop, max 48px on large desktop */}
+        <div className="w-full max-w-none px-5 sm:px-6 md:px-8 lg:px-9 xl:px-10 2xl:px-12">
+          <div className="flex items-center justify-between w-full">
             
-            {/* Left side: Official TellerBud Branding (sit closer to left side) */}
+            {/* Left side: Official TellerBud Branding (fixed/auto width, closer to left edge) */}
             <div className="flex items-center shrink-0">
               <a
                 href="#home"
@@ -79,15 +80,15 @@ export default function Header({ activePage, onNavigate, onGetTellerBud }: Heade
               </a>
             </div>
 
-            {/* Center: Desktop Navigation Bar with clean uncompressed distribution */}
-            <nav className="hidden lg:flex items-center space-x-1.5 xl:space-x-2.5 2xl:space-x-3.5">
+            {/* Center: Flexible navigation area visually centered with refined 22-28px menu spacing */}
+            <nav className="hidden lg:flex flex-1 items-center justify-center min-w-0 mx-2 xl:mx-4 gap-x-4 xl:gap-x-[24px] 2xl:gap-x-[26px]">
               {NAV_ITEMS.map((item) => {
                 const isActive = activePage === item.id;
                 return (
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`px-3.5 xl:px-4 2xl:px-4.5 py-2 text-sm xl:text-[15px] font-medium rounded-full transition-all cursor-pointer whitespace-nowrap ${
+                    className={`px-3 xl:px-3.5 py-1.5 xl:py-2 text-sm xl:text-[15px] font-medium rounded-full transition-all cursor-pointer whitespace-nowrap ${
                       isActive
                         ? 'text-[#008C95] bg-[#DFF4F3] font-semibold shadow-2xs'
                         : 'text-[#182026] hover:text-[#008C95] hover:bg-[#DFF4F3]/40'
@@ -99,12 +100,12 @@ export default function Header({ activePage, onNavigate, onGetTellerBud }: Heade
               })}
             </nav>
 
-            {/* Right side: [ Login ]   [ Get TellerBud ] (sit closer to right side) */}
-            <div className="hidden lg:flex items-center gap-3 xl:gap-3.5 shrink-0">
+            {/* Right side: Fixed/auto width CTA buttons with 10-14px gap (12px), protected from overlap */}
+            <div className="hidden lg:flex items-center gap-3 shrink-0">
               <button
                 type="button"
                 onClick={handleLoginClick}
-                className="px-5 xl:px-6 py-2.5 bg-[#E67E22] hover:bg-[#C96812] active:bg-[#B95C0B] text-[#FFFFFF] text-sm font-semibold rounded-full transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E67E22] focus-visible:ring-offset-2 active:scale-[0.98] inline-flex items-center justify-center whitespace-nowrap min-h-[42px]"
+                className="px-5 xl:px-6 py-2.5 bg-[#E67E22] hover:bg-[#C96812] active:bg-[#B95C0B] text-[#FFFFFF] text-sm font-semibold rounded-full transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E67E22] focus-visible:ring-offset-2 active:scale-[0.98] inline-flex items-center justify-center whitespace-nowrap min-h-[42px] shrink-0"
               >
                 Login
               </button>
@@ -112,7 +113,7 @@ export default function Header({ activePage, onNavigate, onGetTellerBud }: Heade
               <button
                 type="button"
                 onClick={onGetTellerBud}
-                className="px-6 xl:px-7 py-2.5 bg-[#008C95] hover:bg-[#005F67] active:bg-[#00484E] text-[#FCFCFB] text-sm font-semibold rounded-full transition-all shadow-sm shadow-[#008C95]/20 hover:shadow-md hover:shadow-[#008C95]/30 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#008C95] focus-visible:ring-offset-2 active:scale-[0.98] inline-flex items-center justify-center whitespace-nowrap min-h-[42px]"
+                className="px-6 xl:px-7 py-2.5 bg-[#008C95] hover:bg-[#005F67] active:bg-[#00484E] text-[#FCFCFB] text-sm font-semibold rounded-full transition-all shadow-sm shadow-[#008C95]/20 hover:shadow-md hover:shadow-[#008C95]/30 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#008C95] focus-visible:ring-offset-2 active:scale-[0.98] inline-flex items-center justify-center whitespace-nowrap min-h-[42px] shrink-0"
               >
                 Get TellerBud
               </button>

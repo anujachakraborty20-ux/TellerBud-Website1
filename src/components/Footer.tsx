@@ -47,6 +47,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 { id: 'home', label: 'Home' },
                 { id: 'how-it-works', label: 'How It Works' },
                 { id: 'services', label: 'Services' },
+                { id: 'pricing', label: 'Pricing' },
                 { id: 'about', label: 'About' },
                 { id: 'contact', label: 'Contact' },
               ].map((link) => (
