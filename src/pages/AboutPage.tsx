@@ -221,54 +221,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
       </section>
 
       {/* ================================================== */}
-      {/* 2. OUR PURPOSE                                     */}
-      {/* ================================================== */}
-      <section className="w-full py-16 sm:py-24 border-b border-[#D9E4E4] bg-[#FCFCFB]">
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
-          <div className="max-w-3xl mx-auto text-center space-y-5">
-            <span className="text-xs font-semibold tracking-wider text-[#008C95] uppercase block">
-              OUR PURPOSE
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-semibold text-[#090D10] tracking-tight">
-              Bringing essential mobile money services closer to everyday life.
-            </h2>
-            <p className="text-base sm:text-lg text-[#30383D] leading-relaxed font-normal pt-1 max-w-2xl mx-auto">
-              TellerBud is designed to make everyday mobile-money services more convenient for Customers and more manageable for Agents and Business Owners.
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto mt-10 sm:mt-12">
-            <p className="text-sm sm:text-base font-semibold text-[#005F67] uppercase tracking-wider mb-4 sm:mb-5 text-center sm:text-left">
-              The platform brings together:
-            </p>
-
-            <div className="space-y-3 sm:space-y-3.5 text-left">
-              {PURPOSE_POINTS.map((point, idx) => (
-                <div
-                  key={point.title}
-                  className="flex items-start gap-3.5 sm:gap-4 p-4 sm:p-5 rounded-xl bg-white border border-[#E2ECEC] hover:border-[#008C95]/40 transition-colors shadow-xs"
-                >
-                  <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-[#008C95]/10 border border-[#008C95]/20 text-[#008C95] font-bold text-xs sm:text-sm flex items-center justify-center">
-                    0{idx + 1}
-                  </span>
-                  <div className="pt-0.5 text-sm sm:text-base leading-relaxed">
-                    <span className="font-bold text-[#090D10]">{point.title}</span>
-                    <span className="text-[#008C95] mx-2 font-medium">—</span>
-                    <span className="text-[#30383D]">{point.description}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <p className="text-base sm:text-lg text-[#30383D] leading-relaxed font-normal text-center mt-8 sm:mt-10 max-w-2xl mx-auto">
-              TellerBud is built around the role mobile money plays in everyday life, local commerce and community access.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ================================================== */}
-      {/* 3. MEET OUR TEAM (OUR LEADERSHIP)                   */}
+      {/* 2. MEET OUR TEAM (OUR LEADERSHIP)                   */}
       {/* ================================================== */}
       <section className="w-full py-16 sm:py-24 border-b border-[#D9E4E4] bg-[#FCFCFB]">
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
@@ -340,6 +293,53 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
             ))}
           </div>
 
+        </div>
+      </section>
+
+      {/* ================================================== */}
+      {/* 3. OUR PURPOSE                                     */}
+      {/* ================================================== */}
+      <section className="w-full py-16 sm:py-24 border-b border-[#D9E4E4] bg-[#FCFCFB]">
+        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
+          <div className="max-w-3xl mx-auto text-center space-y-5">
+            <span className="text-xs font-semibold tracking-wider text-[#008C95] uppercase block">
+              OUR PURPOSE
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-semibold text-[#090D10] tracking-tight">
+              Bringing essential mobile money services closer to everyday life.
+            </h2>
+            <p className="text-base sm:text-lg text-[#30383D] leading-relaxed font-normal pt-1 max-w-2xl mx-auto">
+              TellerBud is designed to make everyday mobile-money services more convenient for Customers and more manageable for Agents and Business Owners.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto mt-10 sm:mt-12">
+            <p className="text-sm sm:text-base font-semibold text-[#005F67] uppercase tracking-wider mb-4 sm:mb-5 text-center sm:text-left">
+              The platform brings together:
+            </p>
+
+            <div className="space-y-3 sm:space-y-3.5 text-left">
+              {PURPOSE_POINTS.map((point, idx) => (
+                <div
+                  key={point.title}
+                  className="flex items-start gap-3.5 sm:gap-4 p-4 sm:p-5 rounded-xl bg-white border border-[#E2ECEC] hover:border-[#008C95]/40 transition-colors shadow-xs"
+                >
+                  <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-[#008C95]/10 border border-[#008C95]/20 text-[#008C95] font-bold text-xs sm:text-sm flex items-center justify-center">
+                    0{idx + 1}
+                  </span>
+                  <div className="pt-0.5 text-sm sm:text-base leading-relaxed">
+                    <span className="font-bold text-[#090D10]">{point.title}</span>
+                    <span className="text-[#008C95] mx-2 font-medium">—</span>
+                    <span className="text-[#30383D]">{point.description}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-base sm:text-lg text-[#30383D] leading-relaxed font-normal text-center mt-8 sm:mt-10 max-w-2xl mx-auto">
+              TellerBud is built around the role mobile money plays in everyday life, local commerce and community access.
+            </p>
+          </div>
         </div>
       </section>
 

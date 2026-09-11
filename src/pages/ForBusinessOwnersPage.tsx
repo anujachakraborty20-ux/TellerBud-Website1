@@ -32,10 +32,8 @@ interface ForBusinessOwnersPageProps {
 
 // Prepared local hero image path
 const HERO_IMG = '/assets/heroes/business-owners-hero.png';
-const BUSINESS_PARTICIPATION_IMG = '/assets/business-participation.jpg';
-
-// Safe high-resolution online fallback for participation section
-const FALLBACK_PARTICIPATION = 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=85';
+const PARTICIPATION_WORKFLOW_IMG = '/assets/business-owners/participation-workflow.png';
+const FALLBACK_PARTICIPATION = '/assets/business-participation.jpg';
 
 export default function ForBusinessOwnersPage({ onNavigate }: ForBusinessOwnersPageProps) {
   const [participationImgError, setParticipationImgError] = useState(false);
@@ -663,19 +661,18 @@ export default function ForBusinessOwnersPage({ onNavigate }: ForBusinessOwnersP
               <div className="relative rounded-2xl overflow-hidden border border-[#D9E4E4] bg-[#E5F5F5] shadow-lg h-[340px] sm:h-[400px] lg:h-[440px]">
                 {!participationImgError ? (
                   <img
-                    src={BUSINESS_PARTICIPATION_IMG}
+                    src={PARTICIPATION_WORKFLOW_IMG}
                     onError={() => setParticipationImgError(true)}
-                    alt="Connected experience for participating agents"
+                    alt="TellerBud business operations team reviewing Agent activity and service workflow"
                     className="w-full h-full object-cover object-center"
                   />
                 ) : (
                   <img
                     src={FALLBACK_PARTICIPATION}
-                    alt="Connected experience for participating agents"
+                    alt="TellerBud business operations team reviewing Agent activity and service workflow"
                     className="w-full h-full object-cover object-center"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#090D10]/30 to-transparent pointer-events-none" />
               </div>
             </div>
 

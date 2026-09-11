@@ -20,14 +20,16 @@ interface ServicesPageProps {
 
 // Prepared local hero image path
 const HERO_IMG = '/assets/heroes/customer-services-hero.png';
-const SERVICES_PICKUP_IMG = '/assets/services-pickup.jpg';
-const SERVICES_DELIVERY_IMG = '/assets/services-delivery.jpg';
-const SERVICES_WALKIN_IMG = '/assets/services-walk-in.jpg';
 
-// Safe high-resolution online fallbacks for service cards
-const FALLBACK_PICKUP = 'https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=85';
-const FALLBACK_DELIVERY = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=85';
-const FALLBACK_WALKIN = 'https://images.unsplash.com/photo-1556742049-0a67e5572293?auto=format&fit=crop&w=1200&q=85';
+// Local Customer Services Assets (public/assets/customer-services)
+const PICKUP_IMG = '/assets/customer-services/pickup-requests.png';
+const DELIVERY_IMG = '/assets/customer-services/delivery-requests.png';
+const WALKIN_IMG = '/assets/customer-services/walk-in-transactions.png';
+
+// Safe local fallback while new user assets are in upload transit
+const FALLBACK_PICKUP = '/assets/services-pickup.jpg';
+const FALLBACK_DELIVERY = '/assets/services-delivery.jpg';
+const FALLBACK_WALKIN = '/assets/services-walk-in.jpg';
 
 export default function ServicesPage({ onGetTellerBud, onNavigate }: ServicesPageProps) {
   const [pickupImgError, setPickupImgError] = useState(false);
@@ -165,15 +167,15 @@ export default function ServicesPage({ onGetTellerBud, onNavigate }: ServicesPag
               <div className="relative rounded-2xl overflow-hidden border border-[#D9E4E4] bg-[#E5F5F5] shadow-lg h-[340px] sm:h-[400px] lg:h-[440px]">
                 {!pickupImgError ? (
                   <img
-                    src={SERVICES_PICKUP_IMG}
+                    src={PICKUP_IMG}
                     onError={() => setPickupImgError(true)}
-                    alt="Pickup Requests - Customer visiting an agent location"
+                    alt="TellerBud Customer receiving Pickup service from a confirmed Agent"
                     className="w-full h-full object-cover object-center"
                   />
                 ) : (
                   <img
                     src={FALLBACK_PICKUP}
-                    alt="Pickup Requests - Customer visiting an agent location"
+                    alt="TellerBud Customer receiving Pickup service from a confirmed Agent"
                     className="w-full h-full object-cover object-center"
                   />
                 )}
@@ -197,15 +199,15 @@ export default function ServicesPage({ onGetTellerBud, onNavigate }: ServicesPag
               <div className="relative rounded-2xl overflow-hidden border border-[#D9E4E4] bg-[#E5F5F5] shadow-lg h-[340px] sm:h-[400px] lg:h-[440px]">
                 {!deliveryImgError ? (
                   <img
-                    src={SERVICES_DELIVERY_IMG}
+                    src={DELIVERY_IMG}
                     onError={() => setDeliveryImgError(true)}
-                    alt="Delivery Requests - Agent arriving at customer location"
+                    alt="TellerBud Agent providing mobile-money service at a Customer location"
                     className="w-full h-full object-cover object-center"
                   />
                 ) : (
                   <img
                     src={FALLBACK_DELIVERY}
-                    alt="Delivery Requests - Agent arriving at customer location"
+                    alt="TellerBud Agent providing mobile-money service at a Customer location"
                     className="w-full h-full object-cover object-center"
                   />
                 )}
@@ -325,15 +327,15 @@ export default function ServicesPage({ onGetTellerBud, onNavigate }: ServicesPag
               <div className="relative rounded-2xl overflow-hidden border border-[#D9E4E4] bg-[#E5F5F5] shadow-lg h-[340px] sm:h-[400px] lg:h-[440px]">
                 {!walkInImgError ? (
                   <img
-                    src={SERVICES_WALKIN_IMG}
+                    src={WALKIN_IMG}
                     onError={() => setWalkInImgError(true)}
-                    alt="Walk-In Transactions - In-person mobile money service at agent location"
+                    alt="Customer completing a walk-in mobile-money transaction with a TellerBud Agent"
                     className="w-full h-full object-cover object-center"
                   />
                 ) : (
                   <img
                     src={FALLBACK_WALKIN}
-                    alt="Walk-In Transactions - In-person mobile money service at agent location"
+                    alt="Customer completing a walk-in mobile-money transaction with a TellerBud Agent"
                     className="w-full h-full object-cover object-center"
                   />
                 )}
