@@ -95,15 +95,137 @@ export default function ForBusinessOwnersPage({ onNavigate }: ForBusinessOwnersP
       </section>
 
       {/* ================================================== */}
-      {/* 2. BUSINESS OPPORTUNITY INTRODUCTION               */}
+      {/* 2. EARNING OPPORTUNITIES FOR BUSINESS OWNERS        */}
       {/* ================================================== */}
-      <section className="w-full py-14 sm:py-20 border-b border-[#D9E4E4] bg-[#FCFCFB]">
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h2 className="text-2xl sm:text-4xl font-semibold text-[#090D10] tracking-tight">
+      <section className="w-full py-18 sm:py-20 lg:py-22 bg-[#FCFCFB] border-b border-[#D9E4E4]">
+        <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+          {/* Editorial Intro (Left-aligned on desktop spanning available container width) */}
+          <div className="w-full mb-8 sm:mb-10 text-left">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E5F5F5] border border-[#008C95]/20 text-[#005F67] text-xs font-semibold tracking-wider uppercase">
+              <TrendingUp className="w-3.5 h-3.5 text-[#008C95]" />
+              <span>TURN YOUR BUSINESS INTO MORE OPPORTUNITIES</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#090D10] tracking-tight leading-tight mt-3.5 sm:mt-4">
+              Earn more with TellerBud
+            </h2>
+
+            <p className="w-full text-base sm:text-lg lg:text-[18px] text-[#30383D] leading-relaxed font-normal mt-3.5 sm:mt-4">
+              TellerBud helps participating Business Owners earn additional income by supporting Customer Pickup & Delivery and Agent-to-Agent Liquidity.
+            </p>
+          </div>
+
+          {/* Unified Opportunity Enclosure: Two Substantial Panels + Integrated Closing Band */}
+          <div className="rounded-2xl sm:rounded-3xl border border-[#D9E4E4] bg-[#FFFFFF] shadow-2xs overflow-hidden">
+            {/* Top Grid: Two 50% Opportunity Panels with Subtle Divider */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-[#E2EBEB]">
+              {/* Left Panel: Pickup & Delivery */}
+              <div className="p-8 sm:p-10 lg:p-11 text-left space-y-6 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="w-11 h-11 rounded-xl bg-[#E5F5F5] border border-[#008C95]/20 text-[#008C95] flex items-center justify-center">
+                    <Truck className="w-5 h-5" />
+                  </div>
+
+                  <div>
+                    <span className="text-xs font-semibold tracking-wider text-[#005F67] uppercase block mb-1">
+                      CUSTOMER SERVICE OPPORTUNITY
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-semibold text-[#090D10] tracking-tight">
+                      Pickup & Delivery
+                    </h3>
+                  </div>
+
+                  <ul className="space-y-3.5 pt-2">
+                    {[
+                      'Earn from successful Customer requests',
+                      'Support cash pickups and deliveries',
+                      'Serve Customers within your area',
+                    ].map((bullet, idx) => (
+                      <li key={idx} className="flex items-start gap-3.5 text-[15px] sm:text-base text-[#182026] font-normal leading-relaxed">
+                        <CheckCircle2 className="w-4 h-4 text-[#008C95] shrink-0 mt-1" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Right Panel: Agent-to-Agent Liquidity */}
+              <div className="p-8 sm:p-10 lg:p-11 text-left space-y-6 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="w-11 h-11 rounded-xl bg-[#E5F5F5] border border-[#008C95]/20 text-[#008C95] flex items-center justify-center">
+                    <ArrowLeftRight className="w-5 h-5" />
+                  </div>
+
+                  <div>
+                    <span className="text-xs font-semibold tracking-wider text-[#005F67] uppercase block mb-1">
+                      LIQUIDITY OPPORTUNITY
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-semibold text-[#090D10] tracking-tight">
+                      Agent-to-Agent Liquidity
+                    </h3>
+                  </div>
+
+                  <ul className="space-y-3.5 pt-2">
+                    {[
+                      'Provide cash or float to other Agents',
+                      'Earn from successful liquidity transactions',
+                      'Put available liquidity to work',
+                    ].map((bullet, idx) => (
+                      <li key={idx} className="flex items-start gap-3.5 text-[15px] sm:text-base text-[#182026] font-normal leading-relaxed">
+                        <CheckCircle2 className="w-4 h-4 text-[#008C95] shrink-0 mt-1" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Integrated Full-Width Closing Band */}
+            <div className="bg-[#005F67] text-[#FCFCFB] p-7 sm:p-9 lg:p-10 border-t border-[#004D54]">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                <div className="space-y-2 max-w-2xl text-left">
+                  <span className="text-xs sm:text-sm font-bold tracking-widest text-[#9AE6E6] uppercase block">
+                    MORE SERVICES. MORE OPPORTUNITIES.
+                  </span>
+                  <p className="text-base sm:text-lg text-[#FCFCFB]/95 leading-relaxed font-normal">
+                    Your existing mobile-money business can earn more by putting its service capacity, liquidity and Agent network to work through TellerBud.
+                  </p>
+                </div>
+                <div className="shrink-0 text-left sm:text-center lg:text-right">
+                  <button
+                    type="button"
+                    onClick={() => onNavigate('contact')}
+                    className="w-full sm:w-auto px-7 py-3.5 bg-[#FCFCFB] hover:bg-[#E5F5F5] text-[#005F67] font-bold text-sm sm:text-base rounded-full transition-all shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white active:scale-[0.98]"
+                  >
+                    <span>Partner With TellerBud</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Earnings Disclaimer */}
+          <div className="pt-4 text-left">
+            <p className="text-xs sm:text-[13px] text-[#505A60] font-normal leading-normal">
+              Earnings depend on completed transactions, applicable fees and available opportunities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================== */}
+      {/* 3. BUSINESS OPPORTUNITY INTRODUCTION               */}
+      {/* ================================================== */}
+      <section className="w-full py-16 sm:py-20 border-b border-[#D9E4E4] bg-[#EAF7F7]">
+        <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20">
+          <div className="text-center">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#090D10] tracking-tight max-w-[960px] mx-auto">
               Support your community. Strengthen your service reach.
             </h2>
-            <p className="text-base sm:text-lg text-[#30383D] leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-[#30383D] leading-relaxed font-normal max-w-[820px] mx-auto mt-5 sm:mt-6">
               TellerBud is designed to help participating mobile money businesses support nearby Customers through structured service requests, clear acceptance and accountable completion.
             </p>
           </div>
@@ -111,7 +233,7 @@ export default function ForBusinessOwnersPage({ onNavigate }: ForBusinessOwnersP
       </section>
 
       {/* ================================================== */}
-      {/* 3. THREE BUSINESS BENEFITS                         */}
+      {/* 4. AGENT ADVANTAGES & BUSINESS BENEFITS            */}
       {/* ================================================== */}
       <section className="w-full py-16 sm:py-24 border-b border-[#D9E4E4]">
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
