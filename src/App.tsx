@@ -27,6 +27,7 @@ const PATH_PAGE_MAP: Record<string, PageId> = {
   '/': 'home',
   '/how-it-works': 'how-it-works',
   '/services': 'services',
+  '/customer-services': 'services',
   '/for-business-owners': 'for-business-owners',
   '/business-owners': 'for-business-owners',
   '/pricing': 'pricing',
