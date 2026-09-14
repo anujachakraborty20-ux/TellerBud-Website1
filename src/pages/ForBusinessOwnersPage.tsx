@@ -31,7 +31,7 @@ interface ForBusinessOwnersPageProps {
 }
 
 // Prepared local hero image path
-const HERO_IMG = '/assets/heroes/business-owners-hero.png';
+const HERO_IMG = '/assets/business-owners-hero.png';
 const PARTICIPATION_WORKFLOW_IMG = '/assets/business-owners/participation-workflow.png';
 const FALLBACK_PARTICIPATION = '/assets/business-participation.jpg';
 
