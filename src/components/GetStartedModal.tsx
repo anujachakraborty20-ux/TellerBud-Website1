@@ -366,9 +366,7 @@ export default function GetStartedModal({ isOpen, onClose }: ModalProps) {
       errors.businessName = 'Business Name is required.';
     }
 
-    if (!email.trim()) {
-      errors.email = 'Email Address is required.';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+    if (email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       errors.email = 'Please enter a valid email address.';
     }
 
@@ -864,7 +862,7 @@ export default function GetStartedModal({ isOpen, onClose }: ModalProps) {
                           htmlFor="email"
                           className="block text-xs font-bold text-[#090D10] uppercase tracking-wider mb-1.5"
                         >
-                          Email Address <span className="text-[#008C95]">*</span>
+                          Email Address (Optional)
                         </label>
                         <input
                           id="email"

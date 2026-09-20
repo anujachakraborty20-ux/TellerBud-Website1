@@ -123,10 +123,10 @@ const TEAM_MEMBERS: TeamMember[] = [
     ],
   },
   {
-    name: 'Diana Muya',
+    name: 'Diana Nyelani',
     role: 'Sales Manager',
     image: '/assets/team/Diana_Sales_Manager.jpeg',
-    initials: 'DM',
+    initials: 'DN',
     objectPosition: 'object-top',
     intro:
       'Business Administration and Economics professional supporting sales and customer service across the TellerBud Agent network while contributing to market growth and strategy.',
