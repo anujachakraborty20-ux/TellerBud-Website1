@@ -179,14 +179,14 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </div>
                 <div className="flex items-center gap-2 whitespace-nowrap">
                   <a
-                    href="tel:+16163349100"
+                    href="tel:+260773797544"
                     className="whitespace-nowrap hover:text-[#008C95] transition-colors font-normal"
-                    title="Call +1 616 334 9100"
+                    title="Call +260 773797544"
                   >
-                    +1 616 334 9100
+                    +260 773797544
                   </a>
                   <a
-                    href="https://wa.me/16163349100"
+                    href="https://wa.me/260773797544"
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Chat on WhatsApp"

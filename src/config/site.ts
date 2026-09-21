@@ -73,9 +73,9 @@ export const SITE_CONFIG = {
   contact: {
     email: 'info@tellerbud.com',
     location: 'Lusaka, Zambia',
-    phone: '+1 616 334 9100',
-    phoneRaw: '+16163349100',
-    whatsappUrl: 'https://wa.me/16163349100',
+    phone: '+260 773797544',
+    phoneRaw: '+260773797544',
+    whatsappUrl: 'https://wa.me/260773797544',
   },
   social: {
     facebook: FACEBOOK_URL,
