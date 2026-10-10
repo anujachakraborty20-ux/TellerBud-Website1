@@ -1,7 +1,20 @@
-import { Mail, Phone, MapPin, MessageCircle, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Facebook, Instagram } from 'lucide-react';
 import TellerBudLogo from './TellerBudLogo';
 import { PageId } from '../types';
 import { SITE_CONFIG, FACEBOOK_URL, INSTAGRAM_URL, TWITTER_URL } from '../config/site';
+
+function XIcon({ className = 'w-[18px] h-[18px]' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className}
+      fill="currentColor"
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
 
 interface FooterProps {
   activePage: PageId;
@@ -214,9 +227,24 @@ export default function Footer({ onNavigate }: FooterProps) {
               </h5>
               <div className="flex items-center gap-3">
                 {[
-                  { name: 'Facebook', url: FACEBOOK_URL, icon: Facebook },
-                  { name: 'Instagram', url: INSTAGRAM_URL, icon: Instagram },
-                  { name: 'X / Twitter', url: TWITTER_URL, icon: Twitter },
+                  {
+                    name: 'Facebook',
+                    label: 'TellerBud on Facebook',
+                    url: FACEBOOK_URL,
+                    icon: Facebook,
+                  },
+                  {
+                    name: 'Instagram',
+                    label: 'TellerBud on Instagram',
+                    url: INSTAGRAM_URL,
+                    icon: Instagram,
+                  },
+                  {
+                    name: 'X',
+                    label: 'TellerBud on X',
+                    url: TWITTER_URL,
+                    icon: XIcon,
+                  },
                 ].map((item) => {
                   const hasUrl = Boolean(item.url && item.url.trim().length > 0);
                   const Icon = item.icon;
@@ -229,8 +257,8 @@ export default function Footer({ onNavigate }: FooterProps) {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Follow TellerBud on ${item.name}`}
-                      title={`Follow TellerBud on ${item.name}`}
+                      aria-label={item.label}
+                      title={item.label}
                       className={buttonClasses}
                     >
                       <Icon className="w-[18px] h-[18px]" />
@@ -240,8 +268,8 @@ export default function Footer({ onNavigate }: FooterProps) {
                       key={item.name}
                       type="button"
                       onClick={(e) => e.preventDefault()}
-                      aria-label={`Follow TellerBud on ${item.name} (Official profile coming soon)`}
-                      title={`Follow TellerBud on ${item.name} (Official profile coming soon)`}
+                      aria-label={`${item.label} (Official profile coming soon)`}
+                      title={`${item.label} (Official profile coming soon)`}
                       className={`${buttonClasses} cursor-default`}
                     >
                       <Icon className="w-[18px] h-[18px]" />
